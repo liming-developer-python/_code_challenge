@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather API</title>
+</head>
+<body>
+<div>
+    {#  Filtering Search Option  #}
+    <form method="post">
+        {# Put CSRF token for POST request allowed in django app #}
+        {% csrf_token %}
+        <input name="state_id" type="number">
+        <input name="date" type="date">
+        <button type="submit">Search</button>
+    </form>
+</div>
+{# Check if return results has 0 length,#}
+{% if page_obj %}
+    {% for data in page_obj %}
+        {#  page_obj is a list of dictionary data so can return with key-value by loop  #}
+        { Date: {{ data.date|date:"Y/m/d"}},
+        State ID: {{ data.state }},
+        Max Temp: {{ data.max_temp }}°C,
+        Min Temp: {{ data.min_temp }}°C,
+        Rain : {{ data.rain_depth }}cm }<br>
+
+    {% endfor %}
+{% else %}
+    {# when it has 0, show no results#}
+    <p>No Result</p>
+{% endif %}
+
+{# Define current Page Number and set pagination scroll #}
+{# Django has its own pagination template so just used it #}
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</body>
+</html>
