@@ -17,7 +17,7 @@
     <form method="post">
         {# Put CSRF token for POST request allowed in django app #}
         {% csrf_token %}
-        <input name="state_id" type="number">
+        <input name="state_id" type="number" placeholder="state ID">
         <input name="date" type="date">
         <button type="submit">Search</button>
     </form>
