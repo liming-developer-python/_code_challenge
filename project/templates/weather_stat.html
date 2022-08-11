@@ -28,8 +28,8 @@
     {% for data in page_obj %}
         { Year: {{ data.year }},
         State ID: {{ data.state }},
-        Avg Max Temp: {% round(data.avg_max_temp, 2) %}°C,
-        Avg Min Temp: {% round(data.avg_min_temp, 2) %}°C,
+        Avg Max Temp: {{ data.avg_max_temp }}°C,
+        Avg Min Temp: {{ data.avg_min_temp }}°C,
         Total Precipitation : {{ data.total_prec }}cm }<br>
 
     {% endfor %}
