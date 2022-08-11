@@ -30,7 +30,7 @@ Usually starts with ```python manage.py makemigrations```, but already made it a
 
 ###### It takes a while so I suggest to use small txt files for input(especially reduce from wx_data)
 
-## Skip step 2 and Directly Run server.
+## Skip step 2 and Directly Run server and Test Units.
 ###### 3. Finally run the server
 ```
 python3 manage.py runserver
