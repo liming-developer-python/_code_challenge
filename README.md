@@ -30,7 +30,7 @@ Usually starts with ```python manage.py makemigrations```, but already made it a
 
 ###### It takes a while so I suggest to use small txt files for input(especially reduce from wx_data)
 
-## Skip step 2 and Directly Run server.
+## Skip step 2 and Directly Run server and Test Units.
 ###### 3. Finally run the server
 ```
 python3 manage.py runserver
@@ -39,4 +39,15 @@ python3 manage.py runserver
 Then you can check on ```http://localhost:8000``` normally.
 You can set your own port number like  ``` python3 manage.py runserver 8888```.
 
+###### 4. Reference -- Unit Test Case 
+To test all cases together, run following command
+```
+python3 manage.py test
+```
+
+To test individual testcases, there are 2 cases for weather API and stats API
+```
+python3 manage.py test project.tests.WeatherTestCase
+python3 manage.py test project.tests.StatisticsTestCase
+```
 ## Thanks for your feedback!
