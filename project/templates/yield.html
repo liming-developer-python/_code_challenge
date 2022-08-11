@@ -5,6 +5,13 @@
     <title>Yield API</title>
 </head>
 <body>
+{# Make a header bar #}
+<div>
+  <a href="/api/weather">Weather</a>
+  <a href="/api/yield">Yield</a>
+  <a href="/api/weather/stats">Statistics</a>
+  <a href="/api/update">Update(page will not work)</a>
+</div>
 {#  page_obj is a list of dictionary data so can return with key-value by loop  #}
 {% for data in page_obj %}
     {  Year: {{ data.year }},
