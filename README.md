@@ -39,4 +39,15 @@ python3 manage.py runserver
 Then you can check on ```http://localhost:8000``` normally.
 You can set your own port number like  ``` python3 manage.py runserver 8888```.
 
+###### 4. Reference -- Unit Test Case 
+To test all cases together, run following command
+```
+python3 manage.py test
+```
+
+To test individual testcases, there are 2 cases for weather API and stats API
+```
+python3 manage.py test project.tests.WeatherTestCase
+python3 manage.py test project.tests.StatisticsTestCase
+```
 ## Thanks for your feedback!
