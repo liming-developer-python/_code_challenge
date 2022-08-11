@@ -21,7 +21,8 @@ pip3 install django
 
 Then you finished install virtual environment and django for the project.
 
-###### 2. Run migrations to set database (used sqlite)
+## Please skip step 2 for the quick test Because migrate takes a long time to finish. There are more than 200000 records to insert.
+###### 2. Run migrations to set database (used sqlite) 
 ```
 python manage.py migrate
 ```
@@ -29,6 +30,7 @@ Usually starts with ```python manage.py makemigrations```, but already made it a
 
 ###### It takes a while so I suggest to use small txt files for input(especially reduce from wx_data)
 
+## Skip step 2 and Directly Run server.
 ###### 3. Finally run the server
 ```
 python3 manage.py runserver
@@ -36,3 +38,5 @@ python3 manage.py runserver
 
 Then you can check on ```http://localhost:8000``` normally.
 You can set your own port number like  ``` python3 manage.py runserver 8888```.
+
+## Thanks for your feedback!
