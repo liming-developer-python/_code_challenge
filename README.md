@@ -50,4 +50,4 @@ To test individual testcases, there are 2 cases for weather API and stats API
 python3 manage.py test project.tests.WeatherTestCase
 python3 manage.py test project.tests.StatisticsTestCase
 ```
-## Thanks for your feedback!
+## Thanks
